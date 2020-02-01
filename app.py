@@ -23,3 +23,13 @@ for item in songList:
 
 pygame.init()
 pygame.mixer.init()
+
+
+#Create functions to control play, stop, pause buttons
+
+#Play button 
+def play():
+    pygame.mixer.music.load(playlist.get(tkr.ACTIVE)) #Get the active state. Basically ACTIVE is "this" keyword in js 
+    var.set(playlist.get(tkr.ACTIVE))
+    pygame.mixer.music.play()
+    
