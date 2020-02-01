@@ -32,4 +32,10 @@ def play():
     pygame.mixer.music.load(playlist.get(tkr.ACTIVE)) #Get the active state. Basically ACTIVE is "this" keyword in js 
     var.set(playlist.get(tkr.ACTIVE))
     pygame.mixer.music.play()
+
+def stop():
+    pygame.mixer.music.stop()
+
+def pause():
+    pygame.mixer.music.pause()
     
