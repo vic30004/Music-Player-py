@@ -12,7 +12,7 @@ os.chdir(directory)  # change the directory to a specified path.
 
 # returns a list containing a name of the entries in the specified path
 songList = os.listd()
-playlist = tkr.Listbox(musicplayer, font="Helvetica 12 bold", bg="white",
+playlist = tkr.Listbox(musicplayer, font="Helvetica 12 bold", bg="white", fg="black"
                        selectmode=tkr.SINGLE)  # this will display a list of the songs
 
 # Each time we loop, we select a song and the position of the song will increase
@@ -25,19 +25,38 @@ pygame.init()
 pygame.mixer.init()
 
 
-#Create functions to control play, stop, pause buttons
+# Create functions to control play, stop, pause buttons
 
-#Play button 
+# Play button
 def play():
-    pygame.mixer.music.load(playlist.get(tkr.ACTIVE)) #Get the active state. Basically ACTIVE is "this" keyword in js 
+    # Get the active state. Basically ACTIVE is "this" keyword in js
+    pygame.mixer.music.load(playlist.get(tkr.ACTIVE))
     var.set(playlist.get(tkr.ACTIVE))
     pygame.mixer.music.play()
+
 
 def stop():
     pygame.mixer.music.stop()
 
+
 def pause():
     pygame.mixer.music.pause()
 
+
 def unpause():
     pygame.mixer.music.unpause()
+
+
+# creating the actual buttons
+
+PlayBtn = tkr.Button(musicplayer, width=5, height=3, font="Helvetica 12 bold",
+                     bg="green", text="PLAY", fg="white", command=play)
+
+StopBtn = tkr.Button(musicplayer, width=5, height=3,
+                     font="Helvetica 12 bold", bg="red", text="STOP", command=stop)
+
+PauseBtn = tkr.Button(musicplayer, width=5, height=3,
+                      font="Helvetica 12 bold", bg="blue", text="PAUSE", command=pause)
+
+UnpauseBtn = tkr.Button(musicplayer, width=5, height=3,
+                        font="Helvetica 12 bold", bg="purple", text="UNPAUSE", command=unpause)
