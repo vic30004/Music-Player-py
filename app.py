@@ -48,18 +48,17 @@ def unpause():
 
 
 # creating the actual buttons
-
 PlayBtn = tkr.Button(musicplayer, width=5, height=3, font="Helvetica 12 bold",
-                     bg="green", text="PLAY", fg="white", command=play)
+                     bg="#1DB954", text="PLAY", fg="#fff", command=play)
 
 StopBtn = tkr.Button(musicplayer, width=5, height=3,
-                     font="Helvetica 12 bold", bg="red", text="STOP", command=stop)
+                     font="Helvetica 12 bold", bg="#a11919", fg="#fff", text="STOP", command=stop)
 
 PauseBtn = tkr.Button(musicplayer, width=5, height=3,
-                      font="Helvetica 12 bold", bg="blue", text="PAUSE", command=pause)
+                      font="Helvetica 12 bold", bg="#9090ee", fg="#fff", text="PAUSE", command=pause)
 
 UnpauseBtn = tkr.Button(musicplayer, width=5, height=3,
-                        font="Helvetica 12 bold", bg="purple", text="UNPAUSE", command=unpause)
+                        font="Helvetica 12 bold", bg="#ee90ee", fg="#fff", text="UNPAUSE", command=unpause)
 
 
 # Display song title
