@@ -38,4 +38,6 @@ def stop():
 
 def pause():
     pygame.mixer.music.pause()
-    
+
+def unpause():
+    pygame.mixer.music.unpause()
