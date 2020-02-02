@@ -5,14 +5,14 @@ import os
 
 musicplayer = tkr.Tk()
 musicplayer.title("Music Player")
-musicplayer.geometry("450 X 350")
+musicplayer.geometry("450x350")
 
 directory = askdirectory()
 os.chdir(directory)  # change the directory to a specified path.
 
 # returns a list containing a name of the entries in the specified path
-songList = os.listd()
-playlist = tkr.Listbox(musicplayer, font="Helvetica 12 bold", bg="white", fg="black"
+songList = os.listdir()
+playlist = tkr.Listbox(musicplayer, font="Helvetica 12 bold", bg="white", fg="black",
                        selectmode=tkr.SINGLE)  # this will display a list of the songs
 
 # Each time we loop, we select a song and the position of the song will increase
@@ -60,3 +60,18 @@ PauseBtn = tkr.Button(musicplayer, width=5, height=3,
 
 UnpauseBtn = tkr.Button(musicplayer, width=5, height=3,
                         font="Helvetica 12 bold", bg="purple", text="UNPAUSE", command=unpause)
+
+
+# Display song title
+
+var = tkr.StringVar()
+songtitle = tkr.Label(musicplayer, font="Helvetica 12 bold", textvariable=var)
+
+songtitle.pack()  # this will arrange the song titles inside the widget
+PlayBtn.pack(fill="x")
+StopBtn.pack(fill="x")
+PauseBtn.pack(fill="x")
+UnpauseBtn.pack(fill="x")
+playlist.pack(fill="both", expand="yes")
+
+musicplayer.mainloop()
